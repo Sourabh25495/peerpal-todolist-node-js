@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
-const todoRoutes = require("./api/routes/products");
+const todoRoutes = require("./api/routes/userOperations");
 
 mongoose.Promise = Promise;
 
