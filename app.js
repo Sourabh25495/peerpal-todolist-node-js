@@ -6,16 +6,23 @@ const mongoose = require("mongoose");
 
 const todoRoutes = require("./api/routes/userOperations");
 
+
+
 mongoose.Promise = Promise;
 
-mongoose.connect("mongodb://localhost/todoitems", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost/todoitems", {
+  useNewUrlParser: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 mongoose.connection.once('open', () => console.log('connected'))
   .on('error', (error) => {
     console.log(error)
   })
 
+
 app.use(morgan("dev"));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {

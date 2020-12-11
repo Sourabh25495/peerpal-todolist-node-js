@@ -11,11 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0edeebe-71c5-4edb-8795-662a1b9be484" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/routes/getUserProfileInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/updateUserProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passport.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/userOperations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/userOperations.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/userOperations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607649790545</updated>
       <workItem from="1607649791642" duration="4386000" />
-      <workItem from="1607657174275" duration="5320000" />
+      <workItem from="1607657174275" duration="6526000" />
     </task>
     <servers />
   </component>
