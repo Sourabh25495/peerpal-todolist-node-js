@@ -4,7 +4,7 @@ const todoListSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     name: String,
     emailId: String,
-    password: Number,
+    password: String,
     todoItem: []
 });
 

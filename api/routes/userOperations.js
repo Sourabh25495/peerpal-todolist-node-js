@@ -16,7 +16,6 @@ genToken = user => {
 
 router.post("/add-user", (req, res, next) => {
   TodoList.find({emailId: req.body.emailId}).then(response => {
-    console.log("Resp", response)
     if (response && Array.isArray(response) && response.length !== 0) {
       res.status(403).json({message: 'Existing Email ID', email: response.emailId});
     } else {
@@ -24,7 +23,7 @@ router.post("/add-user", (req, res, next) => {
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         emailId: req.body.emailId,
-        password: req.body.password,
+        password: req.body.password.toString(),
         todoItem: []
       });
       todolist
@@ -32,7 +31,7 @@ router.post("/add-user", (req, res, next) => {
         .then(result => {
           console.log(result);
           const token = genToken(result)
-          res.status(200).json({token})
+          res.status(200).json({token, message: 'Your are now registered.'})
           res.status(201).json({
             message: "Handling POST requests to /update-user",
             createdProduct: result
