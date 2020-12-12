@@ -32,10 +32,6 @@ router.post("/add-user", (req, res, next) => {
           console.log(result);
           const token = genToken(result)
           res.status(200).json({token, message: 'Your are now registered.'})
-          res.status(201).json({
-            message: "Handling POST requests to /update-user",
-            createdProduct: result
-          });
         })
         .catch(err => {
           console.log(err);
@@ -56,11 +52,11 @@ router.use("/auth-login", (req, res, next) => {
       if (response[0].password == req.body.password) {
         res.status(200).json({message: 'Authorized'});
       } else {
-        res.status(400).json({message: 'Please check your password.'});
+        res.status(401).json({message: 'Please check your password.'});
       }
       
     } else {
-      res.status(400).json({message: 'Please check the email address you entered.'});
+      res.status(401).json({message: 'Please check the email address you entered.'});
     }
   });
 });
