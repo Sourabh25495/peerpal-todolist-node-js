@@ -76,6 +76,21 @@ router.get("/todos", (req, res, next) => {
     });
 });
 
+router.get("/get-by-user", (req, res, next) => {
+  TodoList.find({emailId: req.query.emailId})
+    .exec()
+    .then(docs => {
+      console.log(docs);
+      res.status(200).json(docs);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
+});
+
 router.put("/update-todos", (req, res) => {
   TodoList.find({emailId: req.body.emailId}).then(response => {
     if (response && Array.isArray(response) && response.length !== 0) {
