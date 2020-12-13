@@ -29,12 +29,10 @@ router.post("/add-user", (req, res, next) => {
       todolist
         .save()
         .then(result => {
-          console.log(result);
           const token = genToken(result)
           res.status(200).json({token, message: 'Your are now registered.'})
         })
         .catch(err => {
-          console.log(err);
           res.status(500).json({
             error: err
           });
@@ -48,7 +46,6 @@ router.post("/add-user", (req, res, next) => {
 router.use("/auth-login", (req, res, next) => {
   TodoList.find({emailId: req.body.emailId}).then(response => {
     if (response && Array.isArray(response) && response.length !== 0) {
-      console.log("Resp", response[0].password, req.body.password);
       if (response[0].password == req.body.password) {
         res.status(200).json({message: 'Authorized'});
       } else {
@@ -65,11 +62,9 @@ router.get("/todos", (req, res, next) => {
   TodoList.find()
     .exec()
     .then(docs => {
-      console.log(docs);
       res.status(200).json(docs);
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json({
         error: err
       });
@@ -80,11 +75,9 @@ router.get("/get-by-user", (req, res, next) => {
   TodoList.find({emailId: req.query.emailId})
     .exec()
     .then(docs => {
-      console.log(docs);
       res.status(200).json(docs);
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json({
         error: err
       });
